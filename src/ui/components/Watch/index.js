@@ -1,5 +1,14 @@
-import React from 'react';
+import React from "react";
+import Nav from "../Nav";
+import Heading from "../Heading";
 
-const Watch = () => <h1>Watch List Wink Wink.</h1>;
+const Watch = () => {
+  return (
+    <div>
+      <Heading>Watch List Wink Wink.</Heading>
+      <Nav></Nav>
+    </div>
+  );
+};
 
 export default Watch;

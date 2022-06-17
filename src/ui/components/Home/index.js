@@ -1,15 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import Nav from "../Nav"
+import Heading from "../Heading";
 
 const Home = () => {
   return (
     <div>
-      <h1>Device Catalogue test</h1>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/iphones">Iphone Catalogue</Link>
-        <Link to="/watches">Watches Catalogue</Link>
-      </nav>
+      <Heading>Device Catalogue</Heading>
+      <Nav></Nav>
     </div>
   );
 };
