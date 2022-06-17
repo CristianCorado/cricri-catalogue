@@ -8,7 +8,7 @@ const Heading = (props) => {
     fontWeight: "300",
     color: "rgb(75, 40, 109)",
     fontSize: "1.75rem",
-    lineHeight: "1.14",
+    lineHeight: "1.14"
   };
 
   return <h1 style={style}> { props.children } </h1>;

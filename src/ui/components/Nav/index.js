@@ -1,22 +1,36 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ITEMS } from "../../utils/constants"
+import { ITEMS } from "../../utils/constants";
 
 const Nav = () => {
   const location = useLocation();
   console.log("🚀 ~ file: index.js ~ line 6 ~ Nav ~ location", location);
 
-  let items = [ ...ITEMS ];
+  const style = {
+    padding: "16px",
+    border: "1px solid rgb(232, 232, 232)",
+    borderRadius: "3px",
+    width: "auto",
+    display: "inline-block",
+    marginTop: "25px",
+  };
 
-  let menuItems = items.map((item) => {
-    return (
-        item.path === location.pathname ? null : <Link to={ item.path }> { item.description }</Link>
-    )
+  let items = [...ITEMS];
+
+  const menuItems = items.map((item) => {
+    return item.path === location.pathname ? null : (
+      <span>
+        <Link to={item.path}>{item.description}</Link>
+        <span style={{ color: "#66CC00", fontWeight: "bold" }}> / </span>
+      </span>
+    );
   });
 
   return (
     <nav>
-      { menuItems }
+      <div style={style}>
+        <span>{menuItems}</span>
+      </div>
     </nav>
   );
 };
