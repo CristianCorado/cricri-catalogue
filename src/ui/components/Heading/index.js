@@ -7,7 +7,7 @@ const Heading = (props) => {
     overflowWrap: "break-word",
     fontWeight: "300",
     color: "rgb(75, 40, 109)",
-    fontSize: "1.75rem",
+    fontSize: "1.45rem",
     lineHeight: "1.14"
   };
 

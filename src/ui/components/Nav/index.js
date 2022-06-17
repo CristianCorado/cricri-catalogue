@@ -4,7 +4,6 @@ import { ITEMS } from "../../utils/constants";
 
 const Nav = () => {
   const location = useLocation();
-  console.log("🚀 ~ file: index.js ~ line 6 ~ Nav ~ location", location);
 
   const style = {
     padding: "16px",
@@ -19,7 +18,7 @@ const Nav = () => {
 
   const menuItems = items.map((item) => {
     return item.path === location.pathname ? null : (
-      <span>
+      <span key={item.path}>
         <Link to={item.path}>{item.description}</Link>
         <span style={{ color: "#66CC00", fontWeight: "bold" }}> / </span>
       </span>

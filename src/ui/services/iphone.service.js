@@ -7,21 +7,17 @@ const options = {
 
 export const getAll = () => {
     const [data, setData] = useState([]);
+    const [error, setError] = useState();
 
     useEffect(() => {
         axios.get(API_URL + IPHONE, options)
         .then((respose) => {
-            console.log("🚀 ~ file: iphone.service.js ~ line 14 ~ .then ~ respose", respose);
             setData(respose.data.data);
         })
         .catch((error) => {
-            console.log("🚀 ~ file: iphone.service.js ~ line 17 ~ useEffect ~ error", error)
+            setError(error)
         });
     }, [setData]);
 
-    return { data }
-}
-
-export const getById = (id) => {
-    return axios.get(API_URL + IPHONE + id, options);
+    return { data, error }
 }

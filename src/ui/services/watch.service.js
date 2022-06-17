@@ -1,13 +1,23 @@
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_URL, WATCH } from "../utils/constants";
 
 const options = {
 };
 
-export const GetAll = () => {
-    axios.get(API_URL + WATCH, options);
-}
+export const getAll = () => {
+    const [data, setData] = useState([]);
+    const [error, setError] = useState();
 
-export const GetById = (id) => {
-    axios.get(API_URL + WATCH + id, options);
+    useEffect(() => {
+        axios.get(API_URL + WATCH, options)
+        .then((respose) => {
+            setData(respose.data.data);
+        })
+        .catch((error) => {
+            setError(error)
+        });
+    }, [setData]);
+
+    return { data, error }
 }
