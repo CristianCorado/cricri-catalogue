@@ -1,25 +1,25 @@
-import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Components
-import Home from '../Home';
-import Iphone from '../Iphone';
-import Watch from '../Watch';
-import NotFound from '../NotFound';
+import Home from "../Home";
+import Iphone from "../Iphone";
+import Watch from "../Watch";
+import NotFound from "../NotFound";
 
 const App = () => (
   <Router>
     <Switch>
-      <Route path="/">
+      <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/watches">
+      <Route exact path="/watches">
         <Watch />
       </Route>
-      <Route path="/iphones">
+      <Route exact path="/iphones">
         <Iphone />
       </Route>
-      <Route path="*">
+      <Route exact path="*">
         <NotFound />
       </Route>
     </Switch>

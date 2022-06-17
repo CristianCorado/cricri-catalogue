@@ -1,6 +1,21 @@
 import React from 'react';
-import Heading from '@tds/core-heading';
 
-const Iphone = () => <Heading level="h1">Iphone List Wink Wink.</Heading>;
+import { getAll } from "../../services/iphone.service";
+
+const Iphone = () => {
+
+    const { data } = getAll();
+
+    const iphoneList = data.map((iphone) => (
+        <li>{ iphone.name }</li>
+    ));
+
+    return(
+        <div>
+            <h1>Iphone List Wink Wink.</h1>
+            { iphoneList }
+        </div>
+    )
+};
 
 export default Iphone;

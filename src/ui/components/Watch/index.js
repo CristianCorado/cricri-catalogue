@@ -1,6 +1,5 @@
 import React from 'react';
-import Heading from '@tds/core-heading';
 
-const Watch = () => <Heading level="h1">Watch List Wink Wink.</Heading>;
+const Watch = () => <h1>Watch List Wink Wink.</h1>;
 
 export default Watch;

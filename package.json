@@ -8,7 +8,7 @@
     "unit": "jest"
   },
   "dependencies": {
-    "@tds/core-heading": "^3.0.8",
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "enzyme": "^3.11.0",
     "express": "^4.17.1",

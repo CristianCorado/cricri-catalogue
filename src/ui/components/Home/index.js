@@ -1,6 +1,17 @@
-import React from 'react';
-import Heading from '@tds/core-heading';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Home = () => <Heading level="h1">Device Catalogue</Heading>;
+const Home = () => {
+  return (
+    <div>
+      <h1>Device Catalogue test</h1>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/iphones">Iphone Catalogue</Link>
+        <Link to="/watches">Watches Catalogue</Link>
+      </nav>
+    </div>
+  );
+};
 
 export default Home;
