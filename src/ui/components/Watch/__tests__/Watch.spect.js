@@ -1,7 +1,9 @@
 import React from "react";
 import { shallow } from "enzyme";
+import Heading from "@tds/core-heading";
+
 import Watch from "../index";
-import Heading from "../../Heading";
+// import Heading from "../../Heading";
 import { getAll } from "../../../services/watch.service";
 import Product from "../../Product";
 
@@ -49,7 +51,7 @@ describe("Watch component tests", () => {
 
     const wrapper = shallow(<Watch></Watch>);
 
-    expect(wrapper.find("div div Heading").children().first().text()).toContain(
+    expect(wrapper.find("div FlexGrid Heading").children().first().text()).toContain(
       "Error fetching data:"
     );
   });

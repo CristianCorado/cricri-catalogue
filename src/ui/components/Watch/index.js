@@ -1,6 +1,10 @@
 import React from "react";
+import FlexGrid from "@tds/core-flex-grid";
+import Box from "@tds/core-box";
+import Heading from "@tds/core-heading";
+
 import Nav from "../Nav";
-import Heading from "../Heading";
+// import Heading from "../Heading";
 import Product from "../Product";
 import watchImage from "../../assets/watch.jpg";
 import { getAll } from "../../services/watch.service";
@@ -8,15 +12,27 @@ import { getAll } from "../../services/watch.service";
 const Watch = () => {
   const { data, error } = getAll();
 
-  const watchList = error ? <Heading>Error fetching data: {error.message}</Heading> : data.map((watch) => {
-    return <Product key={watch.name} image={watchImage} product={watch}></Product>;
-  });
+  const watchList = error ? (
+    <Heading level="h1">Error fetching data: {error.message}</Heading>
+  ) : (
+    data.map((watch) => {
+      return (
+        <FlexGrid.Col key={watch.name}>
+          <Box vertical={2}>
+            <Product image={watchImage} product={watch}></Product>
+          </Box>
+        </FlexGrid.Col>
+      );
+    })
+  );
 
   return (
     <div>
-      <Heading>Watches Catalogue</Heading>
+      <Heading level="h1">Watches Catalogue</Heading>
       <Nav></Nav>
-      <div style={{ display: "flex", alignContent: "center" }}>{watchList}</div>
+      <FlexGrid>
+        <FlexGrid.Row>{watchList}</FlexGrid.Row>
+      </FlexGrid>
     </div>
   );
 };

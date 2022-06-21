@@ -1,12 +1,12 @@
 import React from "react";
-
+import Heading from "@tds/core-heading"
 import Nav from "../Nav"
-import Heading from "../Heading";
+// import Heading from "../Heading";
 
 const Home = () => {
   return (
     <div>
-      <Heading>Device Catalogue</Heading>
+      <Heading level="h1">Device Catalogue</Heading>
       <Nav></Nav>
     </div>
   );

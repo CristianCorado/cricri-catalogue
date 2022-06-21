@@ -1,5 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
+import PriceLockup from "@tds/core-price-lockup";
+
 import Product from "../index";
 
 const dummyProduct = {
@@ -19,6 +21,8 @@ describe("Product component tests", () => {
       <Product image="" product={dummyProduct}></Product>
     );
 
-    expect(wrapper.find("span").text()).toBe("$ 1000");
+    const price = wrapper.find(PriceLockup).dive().children().first();
+
+    expect(price.text()).toBe("$1000");
   });
 });

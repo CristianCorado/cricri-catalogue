@@ -1,30 +1,33 @@
 import React from "react";
-import Card from "../Card";
-import Heading from "../Heading"
-import Note from "../Note";
+import Card from "@tds/core-card";
+import Heading from "@tds/core-heading";
+import Image from "@tds/core-image";
+import PriceLockup from "@tds/core-price-lockup";
+
+// import Card from "../Card";
+// import Heading from "../Heading"
+// import Note from "../Note";
 
 const Product = (props) => {
-  const style = {
-    overflowWrap: "break-word",
-    color: "rgb(42, 44, 46)",
-    fontWeight: "700",
-    fontSize: "1rem",
-    lineHeight: "1.25",
-    letterSpacing: "-0.6px",
-    display: "flex",
-    flexDirection: "column",
-    margin: "15px",
-  };
-
   return (
     <Card>
-      <div style={style}>
-        <img src={props.image} />
-        <h3>{props.product.brand}</h3>
-        <Heading>{props.product.name}</Heading>
-        <span>$ {props.product.price}</span>
-        <Note></Note>
-      </div>
+      <Image
+        src={props.image}
+        rounded="corners"
+        width={200}
+        height={200}
+        alt={props.product.name}
+      />
+      <h3>{props.product.brand}</h3>
+      <Heading level="h2">{props.product.name}</Heading>
+      {/* <span>$ {props.product.price}</span> */}
+      <PriceLockup
+        size="medium"
+        price={props.product.price}
+        bottomText="TELUS Easy Payment and Bring-It-Back applied. Read legal footnote Taxes due upfront."
+        signDirection="left"
+      />
+      {/* <Note></Note> */}
     </Card>
   );
 };
