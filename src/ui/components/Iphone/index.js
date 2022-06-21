@@ -8,11 +8,12 @@ import Nav from "../Nav";
 import Product from "../Product";
 import iphoneImage from "../../assets/iphone.jpg";
 
-import { getAll } from "../../services/iphone.service";
+import { useGetAll } from "../../services/iphone.service";
 
 const Iphone = () => {
-  const { data, error } = getAll();
-
+  const { data, error } = useGetAll();
+  console.log("🚀 ~ file: index.js ~ line 15 ~ Iphone ~ data", data)
+  
   const iphoneList = error ? (
     <Heading level="h1">Error fetching data: {error.message}</Heading>
   ) : (

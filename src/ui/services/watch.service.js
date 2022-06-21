@@ -5,7 +5,7 @@ import { API_URL, WATCH } from "../utils/constants";
 const options = {
 };
 
-export const getAll = () => {
+export const useGetAll = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState();
 

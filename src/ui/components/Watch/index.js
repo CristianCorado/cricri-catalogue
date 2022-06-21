@@ -7,10 +7,10 @@ import Nav from "../Nav";
 // import Heading from "../Heading";
 import Product from "../Product";
 import watchImage from "../../assets/watch.jpg";
-import { getAll } from "../../services/watch.service";
+import { useGetAll } from "../../services/watch.service";
 
 const Watch = () => {
-  const { data, error } = getAll();
+  const { data, error } = useGetAll();
 
   const watchList = error ? (
     <Heading level="h1">Error fetching data: {error.message}</Heading>

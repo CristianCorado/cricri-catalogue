@@ -4,18 +4,18 @@ import Heading from "@tds/core-heading";
 
 import Iphone from "../index";
 // import Heading from "../../Heading";
-import { getAll } from "../../../services/iphone.service";
+import { useGetAll } from "../../../services/iphone.service";
 import Product from "../../Product";
 
 jest.mock("../../../services/iphone.service", () => {
   return {
-    getAll: jest.fn(),
+    useGetAll: jest.fn(),
   };
 });
 
 describe("Iphone component tests", () => {
   it("should render", () => {
-    getAll.mockImplementation(() => ({
+    useGetAll.mockImplementation(() => ({
       data: [
         {
           name: "iPhone 12 Pro Test",
@@ -47,7 +47,7 @@ describe("Iphone component tests", () => {
     );
   });
   it("should show error message on network error", () => {
-    getAll.mockImplementation(() => ({
+    useGetAll.mockImplementation(() => ({
       data: [],
       error: {
         message: "error",

@@ -4,18 +4,18 @@ import Heading from "@tds/core-heading";
 
 import Watch from "../index";
 // import Heading from "../../Heading";
-import { getAll } from "../../../services/watch.service";
+import { useGetAll } from "../../../services/watch.service";
 import Product from "../../Product";
 
 jest.mock("../../../services/watch.service", () => {
   return {
-    getAll: jest.fn(),
+    useGetAll: jest.fn(),
   };
 });
 
 describe("Watch component tests", () => {
   it("should render", () => {
-    getAll.mockImplementation(() => ({
+    useGetAll.mockImplementation(() => ({
       data: [
         {
           name: "Apple Watch Series 6",
@@ -42,7 +42,7 @@ describe("Watch component tests", () => {
     );
   });
   it("should show error message on network error", () => {
-    getAll.mockImplementation(() => ({
+    useGetAll.mockImplementation(() => ({
       data: [],
       error: {
         message: "error",
