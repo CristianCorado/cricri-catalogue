@@ -1,6 +1,15 @@
-import React from 'react';
-import Heading from '@tds/core-heading';
+import React from "react";
 
-const Home = () => <Heading level="h1">Device Catalogue</Heading>;
+import Nav from "../Nav"
+import Heading from "../Heading";
+
+const Home = () => {
+  return (
+    <div>
+      <Heading>Device Catalogue</Heading>
+      <Nav></Nav>
+    </div>
+  );
+};
 
 export default Home;

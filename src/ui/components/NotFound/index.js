@@ -1,6 +1,5 @@
 import React from 'react';
-import Heading from '@tds/core-heading';
 
-const NotFound = () => <Heading level="h1">404</Heading>;
+const NotFound = () => <h1>404</h1>;
 
 export default NotFound;
