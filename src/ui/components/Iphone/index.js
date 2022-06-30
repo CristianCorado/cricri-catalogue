@@ -12,7 +12,6 @@ import { useGetAll } from "../../services/iphone.service";
 
 const Iphone = () => {
   const { data, error } = useGetAll();
-  console.log("🚀 ~ file: index.js ~ line 15 ~ Iphone ~ data", data)
   
   const iphoneList = error ? (
     <Heading level="h1">Error fetching data: {error.message}</Heading>
